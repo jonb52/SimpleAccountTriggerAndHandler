@@ -1,28 +1,30 @@
-public with sharing class AccountTaskCreate {
-    public static void createTask(List<Account> newListOfAccounts) {
-        // Initializing a empty list to hold the tasks
+public class AccountTaskCreate {
+    public static void creteTask(List<Account> newListOfAccounts){
+       
+        // A list to hold each of the tasks getting created in this method
         List<Task> tskList = new List<Task>();
 
-        // For loop to loop over each of the accounts in the newListOfAccounts list
+        // For loop to loop each of the accounts and create a task to relate to each account
         for(Account acc : newListOfAccounts){
             // Creates an empty task
             Task tsk = new Task();
-            // Sets the subject to Call
+            // Sets the task subject
             tsk.Subject = 'Call';
-            // Sets the status to Not Started
+            // Sets the task status
             tsk.Status = 'Not Started';
-            // Sets the priority to Normal
+            // Sets the task priority
             tsk.Priority = 'Normal';
             // Relates the task to the account
-            tsk.WhatId = acc.Id;
-            // Sets th due date to 5 days from the creation date
+            tsk.WhatId = acc.ID;
+            // Sets the task due date to five days in the future
             tsk.ActivityDate = Date.today() + 5;
-            // Adds to newly created task to our list
+            // Adds the task to the task list to later be inserted into the database
             tskList.add(tsk);
+		}
+
+        // If the task list has at least one task, then insert it into the database
+	    if(tskList!=null && tskList.size()>0){
+			insert tskList;
         }
-        // Checks to make sure that there is at least one task in the list before inserting
-        if(tskList!=null && tskList.size()>0){
-            insert tskList;
-        }
-    }
+	}
 }
