@@ -21,7 +21,7 @@ public class AccountDupeCheck {
         }
     }
 
-	// A private method (only accessable/callable from this class). This method is used return the names of accounts in the DB.   
+    // A private method (only accessable/callable from this class). This method is used return the names of accounts in the DB.   
     private static Set<String> getAccountNames(){
         
         // SOQL query to retreive up to 50000 account records in the database
