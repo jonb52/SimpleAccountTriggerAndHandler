@@ -20,11 +20,11 @@ public class AccountTaskCreate {
             tsk.ActivityDate = Date.today() + 5;
             // Adds the task to the task list to later be inserted into the database
             tskList.add(tsk);
-		}
+	}
 
         // If the task list has at least one task, then insert it into the database
 	    if(tskList!=null && tskList.size()>0){
-			insert tskList;
+	        insert tskList;
         }
-	}
+    }
 } 
