@@ -25,8 +25,8 @@ public class TestUtil {
         }
 
         // If statement to determine if the test accounts should be inserted into the database 
-        if(doInsert == True && testAccounts.size() > 0){
-            insert testAccounts;
+        if(doInsert == True && listOfTestAccounts.size() > 0){
+            insert listOfTestAccounts;
         }
 
         // Returns the list of newly created accounts to the caller

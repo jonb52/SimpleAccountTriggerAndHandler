@@ -1,5 +1,5 @@
 public class AccountTaskCreate {
-    public static void creteTask(List<Account> newListOfAccounts){
+    public static void createTask(List<Account> newListOfAccounts){
        
         // A list to hold each of the tasks getting created in this method
         List<Task> tskList = new List<Task>();
@@ -20,11 +20,11 @@ public class AccountTaskCreate {
             tsk.ActivityDate = Date.today() + 5;
             // Adds the task to the task list to later be inserted into the database
             tskList.add(tsk);
-	}
+		}
 
         // If the task list has at least one task, then insert it into the database
 	    if(tskList!=null && tskList.size()>0){
-	        insert tskList;
+			insert tskList;
         }
-    }
-} 
+	}
+}

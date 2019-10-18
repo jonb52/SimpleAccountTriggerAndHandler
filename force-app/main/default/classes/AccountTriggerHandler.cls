@@ -8,7 +8,7 @@
 
 public class AccountTriggerHandler {
     public static void beforeInsert(List<Account> newListOfAccounts){
-        AccountDupeCheck.dupeCheck(newListOfAccounts);
+        AccountDupeCheck.dupeCatch(newListOfAccounts);
     }
 
     public static void afterInsert(List<Account> newListOfAccounts){
